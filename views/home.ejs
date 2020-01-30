@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Minhas Compras</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+        body {
+            background: #f4f4f4;
+        }
+        img.displayed {
+            display: block;
+            margin-left: auto;
+            margin-right: auto 
+        }
+    </style>
+  </head>
+  <body>
+    <!-- APP -->
+    <div class="container" id="app">
+        <img class="displayed responsive-img" src="/images/logo.png" alt="logo do app" />
+        <ul class="collection with-header">
+            <li class="collection-header"><h4>Lista de Compras</h4></li>
+            <% itens.forEach( item => { %>
+              <li class="collection-item"><div><%- item.item %><a href="/delItem/<%- item.id %>" class="secondary-content"><i class="material-icons">delete</i></a></div></li>
+            <% }) %>
+        </ul>
+        <form action="/addItem" method="post">
+          <input type="text" name="novoItem" placeholder="Novo Item" autocomplete="off" required />
+          <div class="right">
+              <button class="btn waves-effect waves-light">Adicionar</button>
+          </div>
+        </form>
+    </div>
+    <!-- /APP -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
