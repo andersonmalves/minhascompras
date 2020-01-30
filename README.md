@@ -1,3 +1,3 @@
-# minhascompras
+# Minhas Compras
 
-Projeto de CRUD feito em NodeJS usando Express, EJS e SQLite.
+Projeto de CRUD feito em NodeJS usando Express e SQLite.
